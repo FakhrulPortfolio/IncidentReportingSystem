@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Report an Incident</title>
+    <style>
+        body {
+            background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 400px;
+            margin: 60px auto;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+            padding: 32px 28px 24px 28px;
+        }
+        h1 {
+            text-align: center;
+            color: #f76b1c;
+            margin-bottom: 28px;
+        }
+        label {
+            font-weight: 500;
+            color: #333;
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px 12px;
+            margin-top: 6px;
+            margin-bottom: 18px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: #fafafa;
+            font-size: 1rem;
+            transition: border 0.2s;
+        }
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        textarea:focus {
+            border: 1.5px solid #f76b1c;
+            outline: none;
+            background: #fff;
+        }
+        input[type="submit"] {
+            width: 100%;
+            background: linear-gradient(90deg, #f76b1c 0%, #fad961 100%);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 12px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(247, 107, 28, 0.08);
+            transition: background 0.2s, transform 0.1s;
+        }
+        input[type="submit"]:hover {
+            background: linear-gradient(90deg, #fad961 0%, #f76b1c 100%);
+            transform: translateY(-2px) scale(1.02);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Report an Incident</h1>
+        <form action="ReportIncidentServlet" method="post">
+            <label for="name">Your Name:</label><br>
+            <input type="text" id="name" name="name" required><br>
+
+            <label for="email">Your Email:</label><br>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="issue">Issue Title:</label><br>
+            <input type="text" id="issue" name="issue" required><br>
+
+            <label for="description">Description:</label><br>
+            <textarea id="description" name="description" rows="5" cols="40" required></textarea><br>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
